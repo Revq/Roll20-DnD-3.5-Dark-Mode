@@ -1,0 +1,532 @@
+/* ==UserStyle==
+@name         Roll20 Dark Mode for DnD 3.5e
+@namespace    Roll20-DnD-3.5-Dark-Mode
+@description  Dark Mode for Roll 20 Dungeons and Dragons 3.5e module.
+@author       Revq (https://github.com/Revq)
+@homepageURL  
+@supportURL   
+@updateURL    
+@version      0.1
+@license      MIT
+==/UserStyle== */
+/*
+MIT License
+
+Copyright (c) 2022 Revq
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
+
+/* Global */
+table,
+tbody,
+th,
+tr,
+a,
+td,
+ul,
+li,
+codep,
+label {
+	background-color: #121212;
+	border-color: #2e2e2e;
+	color: #e5e5e5;
+}
+
+textarea,
+input {
+	background-color: #242424!important;
+	border-color: #000000!important;
+	color: #e5e5e5!important;
+	border-width: 1px 1px 1px 1px!important;
+}
+textarea:focus,
+input:focus {
+	outline: none;
+	background-color: #2e2e2e!important;
+	border-color: #626262!important;
+}
+
+
+#editor-wrapper {
+	background: #121212;
+}
+
+[class="message system"] {
+	display: none;
+}
+
+[class^='ui']:not(.ui-icon) {
+	background: #121212;
+	border-color: #2e2e2e;
+	color: #e5e5e5;
+	fill: #e5e5e5;
+}
+
+.ui-icon {
+	filter: invert(100%);
+}
+
+p,
+label {
+	color: #e5e5e5;
+	fill: #e5e5e5;
+}
+
+[class*='btn'],
+button {
+	color: #e5e5e5!important;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);
+	background: none;
+	background-color: #272727;
+	border: 1px solid #2e2e2e;
+}
+
+[class*='btn']:hover,
+button:hover {
+	background-color: #383838;
+	color: #e5e5e5;
+}
+
+hr {
+	margin: 18px 0;
+	border: 0;
+	border-top: 1px solid #000000!important;
+	border-bottom: 1px solid #121212;
+}
+
+::selection {
+	background-color: #001f66;
+	color: #e5e5e5;
+}
+
+select {
+	background-color: #1e1e1e;
+	border: 1px solid #000;
+	color: #e5e5e5;
+}
+
+/*Scroll Bar*/
+::-webkit-scrollbar {
+	width: 15px!important;
+	height: 15px!important;
+	background-color: #000000!important;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #121212!important;
+	border: 2px solid #090909!important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: #272727!important;
+}
+
+::-webkit-scrollbar-thumb:active {
+	background-color: #383838!important;
+}
+
+::-webkit-scrollbar-corner {
+	background-color: #000000!important;
+	color: #555555!important;
+}
+
+::-webkit-scrollbar-button {
+	border: 2px solid #000000!important;
+	width: 10px;
+	height: 10px
+}
+
+::-webkit-scrollbar-button:hover {
+	background-color: #272727!important;
+}
+
+::-webkit-scrollbar-button:end {
+	display: block
+}
+
+::-webkit-scrollbar-button:start {
+	display: none
+}
+
+::-webkit-scrollbar-button:vertical {
+	border-top: 0
+}
+
+::-webkit-scrollbar-button:horizontal {
+	border-left: 0
+}
+
+::-webkit-scrollbar-button:vertical:increment {
+	background: url("//i.imgur.com/oclbvml.png") center center no-repeat
+}
+
+::-webkit-scrollbar-button:vertical:decrement {
+	background: url("//i.imgur.com/14PHKSe.png") center center no-repeat
+}
+
+::-webkit-scrollbar-button:horizontal:increment {
+	background: url("//i.imgur.com/IBo4sTv.png") center center no-repeat
+}
+
+::-webkit-scrollbar-button:horizontal:decrement {
+	background: url("//i.imgur.com/eeJjqhE.png") center center no-repeat
+}
+
+/*Color Picker*/
+.color_swatch {
+	overflow: hidden;
+	border-radius: 50% !important;
+}
+
+#color_selector {
+	border: 1px solid #2e2e2e!important;
+}
+
+#color_selector,
+#color_custom > label {
+	background: #121212!important;
+	color: #e5e5e5!important;
+}
+
+#macromenu > ul > li > div {
+	margin-top: 5px;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+
+#macromenu,
+#macromenu > ul > li {
+	background: #121212!important;
+	color: #e5e5e5!important;
+}
+
+/*Avatar*/
+div.video.player-bookmark.ui-draggable {
+	background-size: contain!important;
+	border-radius: 50%;
+	background-position: center center;
+	background-repeat: no-repeat;
+	overflow: hidden;
+	-webkit-box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.5);
+	box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.5);
+	margin-bottom: 7px;
+}
+
+.textchatcontainer .avatar,
+div.color_picker,
+div.playercolor {
+	overflow: hidden;
+	border-radius: 50% !important;
+	-webkit-box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.5);
+	box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.5);
+}
+
+div.color_picker,
+div.playercolor {
+	width: 30px!important;
+	height: 30px!important;
+	margin-top: -3px;
+	margin-right: -5px;
+	transition: linear 0.1s;
+}
+
+div.color_picker:hover,
+div.playercolor:hover {
+	width: 32px!important;
+	height: 32px!important;
+	margin-top: -4px;
+	margin-right: -6px;
+}
+
+#playerzone .player {
+	margin-right: 15px;
+}
+
+#campaignsettings > p:nth-child(2) > div:nth-child(2),
+#campaignsettings > p:nth-child(2) > div:nth-child(4),
+#campaignsettings > p:nth-child(2) > div:nth-child(6),
+#macromenu > ul > li > div {
+	width: 20px!important;
+	height: 20px!important;
+	margin-right: 0;
+	transition: linear 0.1s;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+
+#campaignsettings > p:nth-child(2) > div:nth-child(2):hover,
+#campaignsettings > p:nth-child(2) > div:nth-child(4):hover,
+#campaignsettings > p:nth-child(2) > div:nth-child(6):hover,
+#macromenu > ul > li > div:hover {
+	width: 21px!important;
+	height: 21px!important;
+}
+
+/* Character Sheet */
+[class^="charactersheet"] {
+	background-color: #121212!important;
+}
+
+.charsheet .sheet-statlabel,
+.charsheet table td.sheet-statlabel,
+.charsheet .sheet-statlabel,
+.charsheet table td.sheet-statlabel-big,
+.charsheet .sheet-table-row-name,
+div.sheet-pc-encumbrance > div > table > tbody > tr:nth-child(1) > td,
+.charsheet span.sheet-tab,
+.charsheet .sheet-statlabel-big-gray {
+	background-color: #1e1e1e;
+	border: 1px solid #000;
+	color: #e5e5e5;
+}
+
+
+div.sheet-pc-spell-action > table > tbody > tr > td:nth-child(1) > button,
+div.sheet-pc-spell-action > table > tbody > tr > td:nth-child(2) > button {
+	color: #e5e5e5!important;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);
+	background: none;
+	background-color: #272727;
+	border: 1px solid #2e2e2e;
+}
+
+div.sheet-pc-spell-action > table > tbody > tr > td:nth-child(1) > button:hover,
+div.sheet-pc-spell-action > table > tbody > tr > td:nth-child(2) > button:hover {
+	background-color: #383838;
+	color: #e5e5e5;
+}
+
+/*Initiative Window*/
+#initiativewindow ul li:first-child {
+	background-color: #383838;
+}
+
+#initiativewindow ul li {
+	background-color: #222;
+	border-bottom: 1px solid #000;
+}
+
+#initiativewindow ul li .controls,
+#initiativewindow ul li span.initiative.editable.ui-droppable:hover {
+	background-color: rgba(0, 0, 0, .6);
+}
+
+.no-touch #initiativewindow span.editable:hover {
+	background-color: rgba(255, 255, 255, 1);
+}
+
+#initiativewindow > ul > li > span.name {
+	font-size: 14px;
+	margin-left: 5px!important;
+	vertical-align: middle!important;
+	text-align: center!important;
+	height: auto!important;
+}
+
+#initiativewindow > ul > li > span.initiative.editable.ui-droppable {
+	font-size: 20px;
+	text-align: center;
+}
+#initiativewindow > ul > li > span.initiative.editable.ui-droppable > input {
+	font-size: 20px;
+	text-align: center;
+	width: 20px;
+}
+
+#initiativewindow_settings > p:nth-child(8) > button {
+	background-color: rgba(165, 0, 0, .9)!important;
+}
+
+li.token > img {
+	width: 30px;
+	height: 30px;
+	background-size: contain!important;
+	border-radius: 50%;
+	background-position: center center;
+	background-repeat: no-repeat;
+	overflow: hidden;
+	-webkit-box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.5);
+	box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.5);
+}
+.ui-dialog-buttonset .ui-button:nth-child(2),
+.ui-dialog-buttonset .ui-button:nth-child(3),
+.ui-dialog-buttonset .ui-button:nth-child(4),
+.ui-dialog-buttonset .ui-button:nth-child(5),
+.ui-dialog-buttonset .ui-button:nth-child(6) {
+	background-image: none;
+	background-color: #333333;
+	border: 1px solid #000;
+}
+/* Right Panel */
+/*Messages*/
+.sheet-subheader {
+	color: #999!important;
+}
+[class^="sheet-rolltemplate"] a {
+	color: #a0d8e1;
+	background: none;
+	text-decoration: underline;
+}
+[class^="sheet-rolltemplate"] a:hover {
+	color: #84b3bb;
+	text-decoration: underline;
+}
+
+[class^="sheet-rolltemplate"] a:visited {
+	color: #a0d8e1;
+	text-decoration: underline;
+}
+
+[class^="sheet-rolltemplate"] a:active {
+	color: #496468;
+	text-decoration: underline;
+}
+
+[class^="message"] {
+	color: #e5e5e5;
+	background-color: #121212!important;
+}
+
+[class^="sheet-rolltemplate"] td,
+[class^="sheet-rolltemplate"] th {
+	background: #333333;
+}
+
+[class^="sheet-rolltemplate"] table {
+	border: 1px solid #000;
+}
+[class="chatlogmessage message system"],
+[class="chatlogmessage message system"] a {
+	background-color: #1e1e1e!important;
+	color: #e5e5e5!important;
+}
+[class^="message"][class*="you"] {
+	background-color: #1e1e1e!important;
+}
+[class^="message"][class*="private"] {
+	background-color: #2d281a!important;
+}
+.spacer {
+	background-color: #000!important;
+}
+.formula {
+	background-color: #333333!important;
+	border-color: #000!important;
+	color: #e5e5e5!important;
+}
+[class^="rolled"] {
+	background-color: #333333!important;
+	border-color: #000!important;
+	color: #e5e5e5!important;
+}
+.didroll {
+	color: #e5e5e5!important;
+	text-shadow: -1px -1px 1px #000, 1px -1px 1px #000, -1px 1px 1px #000, 1px 1px 1px #000!important;
+}
+.textchatcontainer .inlinerollresult {
+	background-color: #333333;
+	border: 2px solid #000;
+}
+.textchatcontainer .inlinerollresult.fullcrit {
+	border: 2px solid #3fb315;
+}
+.textchatcontainer .inlinerollresult.fullfail {
+	border: 2px solid #b31515;
+}
+/*Right Panel*/
+/* Buttons panels and other */
+#textchat-input,
+#rightsidebar {
+	background-color: #121212;
+}
+#textchat-input {
+	border: none;
+}
+#textchat-notifier {
+	background-color: #333333;
+	color: #e5e5e5;
+}
+[class*="tabmenu"] {
+	background-color: #1e1e1e!important;
+}
+[class*="tabmenu"] > li > a {
+	color: #e5e5e5!important;
+}
+#rightsidebar > ul > li:hover {
+	background-color: #383838!important;
+}
+
+#journalfolderroot > ol > li > ol > li > div.dd-content > div,
+div.dd-content > div {
+	color: #e5e5e5!important;
+}
+#imagedialog > div.searchbox,
+#settings-accordion > div > div.panel-heading.collapsed,
+#settings-accordion > div,
+#settings-accordion > div > div.panel-heading {
+	background-color: #121212;
+	color: #e5e5e5!important;
+	border: 1px solid #000;
+}
+#imagedialog > div.searchbox a,
+#settings-accordion > div > div.panel-heading.collapsed a,
+#settings-accordion > div a,
+#settings-accordion > div > div.panel-heading a {
+	background-color: #121212;
+	color: #e5e5e5!important;
+}
+.el-checkbox {
+	color: #e5e5e5;
+}
+.el-input__wrapper {
+	background-color: #242424!important;
+}
+#el-popper-container-19 > div > div,
+.el-select-dropdown__item {
+	background-color: #121212!important;
+	color: #e5e5e5;
+	border: 1px solid #000;
+}
+li.el-select-dropdown__item.hover {
+	background-color: #333333!important;
+	color: #e5e5e5;
+}
+
+/* Floating toolbar */
+#floatingtoolbar div.submenu > ul,
+#editinglayer li.gm_slider_box {
+	background-color: #121212;
+	border: 1px solid darkgray;
+	color: #e5e5e5;
+}
+#floatingtoolbar div.submenu > ul span {
+	color: #e5e5e5;
+}
+#gm_layer_slider > a {
+	background-color: lightgray;
+}
+#editinglayer > div > ul:nth-child(2) > li > div {
+	background-color: #2e2e2e;
+}
