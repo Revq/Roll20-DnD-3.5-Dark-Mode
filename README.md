@@ -12,7 +12,7 @@ There are no current plans for that, I don't care about Roll20 enough, this was 
 ### Can I give suggestions / report bugs for this? 
 Sure, use the Issues section for both. I might consider them, or not ¯&#92;_(ツ)_/¯
 
-### Can I user your style for other modules?
+### Can I use your style for other modules?
 Of couse, just make sure to respect the MIT licence
 
 ### Do you take pull requests?
