@@ -17,3 +17,6 @@ Of couse, just make sure to respect the MIT licence
 
 ### Do you take pull requests?
 I might but there is a low chance of that
+
+## Preview
+![Preview Screenshot](https://i.imgur.com/Wjkj7LY.png)
